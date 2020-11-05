@@ -10,8 +10,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>8</maven.compiler.target>
-        <maven.compiler.source>8</maven.compiler.source>
     </properties>
 
     <build>
@@ -35,7 +33,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <argLine>-javaagent:D:\projects\kelloggs-observer-agent\target\kelloggs-observer-agent-1.0-SNAPSHOT-shaded.jar=8081</argLine>
+                    <argLine>-javaagent:C:\Users\renaud.rwemalika\projects\kelloggs-observer-agent\target\kelloggs-observer-agent-1.0-SNAPSHOT-shaded.jar=8081</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -44,6 +42,8 @@
                 <version>3.6.2</version>
                 <configuration>
                     <compilerArgument>-Xlint:deprecation</compilerArgument>
+                    <source>9</source>
+                    <target>9</target>
                 </configuration>
             </plugin>
         </plugins>
