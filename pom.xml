@@ -33,7 +33,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <argLine>-javaagent:C:\Users\renaud.rwemalika\projects\kelloggs-observer-agent\target\kelloggs-observer-agent-1.0-SNAPSHOT-shaded.jar=8081</argLine>
+                    <argLine>-javaagent:C:\Users\renaud.rwemalika\projects\kelloggs-observer-agent\target\kelloggs-observer-agent-1.0-SNAPSHOT.jar=8081</argLine>
                 </configuration>
             </plugin>
             <plugin>
