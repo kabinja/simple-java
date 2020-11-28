@@ -18,7 +18,6 @@ class ThreadUtilsTest {
     @Test
     void threadWithTimeout()
     {
-
         assertTimeout(ofSeconds(5), () -> {
             final ByteArrayOutputStream stream = ThreadUtils.toStreamUnsafe("Hello ", "World");
             Thread.sleep(200);

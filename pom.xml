@@ -33,7 +33,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <argLine>-javaagent:C:\Users\renaud.rwemalika\projects\kelloggs-observer-agent\target\kelloggs-observer-agent-1.0-SNAPSHOT-jar-with-dependencies.jar=8081</argLine>
+                    <argLine>-javaagent:C:\Users\renaud.rwemalika\projects\kelloggs-observer-agent\target\kelloggs-observer-agent-1.0-SNAPSHOT-jar-with-dependencies.jar=localhost,8086</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -42,8 +42,8 @@
                 <version>3.6.2</version>
                 <configuration>
                     <compilerArgument>-Xlint:deprecation</compilerArgument>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -57,6 +57,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
 </project>
