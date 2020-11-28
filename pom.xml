@@ -33,7 +33,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <argLine>-javaagent:C:\Users\renaud.rwemalika\projects\kelloggs-observer-agent\target\kelloggs-observer-agent-1.0-SNAPSHOT-jar-with-dependencies.jar=localhost,8086</argLine>
+                    <argLine>-javaagent:${kelloggs.agent.path}=localhost,${kelloggs.agent.port}</argLine>
                 </configuration>
             </plugin>
             <plugin>
