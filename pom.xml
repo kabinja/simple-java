@@ -32,9 +32,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
-                <configuration>
-                    <argLine>-javaagent:${kelloggs.agent.path}=localhost,${kelloggs.agent.port}</argLine>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <argLine>-javaagent:${kelloggs.agent.path}=localhost,${kelloggs.agent.port}</argLine>-->
+<!--                </configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -45,6 +45,18 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>lu.uni.serval</groupId>
+                <artifactId>flakime-maven-plugin</artifactId>
+                <version>0.1.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>flakime-injector</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
