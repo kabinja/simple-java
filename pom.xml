@@ -57,6 +57,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <flakeRate>1</flakeRate>
+                    <strategy>vocabulary</strategy>
+                    <testAnnotations>
+                        <annotation>@org.junit.jupiter.api.Test</annotation>
+                    </testAnnotations>
+                </configuration>
             </plugin>
         </plugins>
     </build>
