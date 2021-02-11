@@ -63,6 +63,12 @@
                     <testAnnotations>
                         <annotation>@org.junit.jupiter.api.Test</annotation>
                     </testAnnotations>
+                    <strategyParameters>
+                        <property>
+                            <name>trainModel</name>
+                            <value>false</value>
+                        </property>
+                    </strategyParameters>
                 </configuration>
             </plugin>
         </plugins>
