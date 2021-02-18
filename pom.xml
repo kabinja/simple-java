@@ -58,7 +58,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <flakeRate>0.08</flakeRate>
+                    <flakeRate>1</flakeRate>
                     <strategy>vocabulary</strategy>
                     <testAnnotations>
                         <annotation>@org.junit.jupiter.api.Test</annotation>
@@ -66,7 +66,11 @@
                     <strategyParameters>
                         <property>
                             <name>trainModel</name>
-                            <value>true</value>
+                            <value>false</value>
+                        </property>
+                        <property>
+                            <name>modelPath</name>
+                            <value>rfc_classifier</value>
                         </property>
                         <property>
                             <name>randomForestTrees</name>
