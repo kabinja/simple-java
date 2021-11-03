@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NetworkUtilsTest {
     @Test
-    void testListenForMessageFor3secondsWithNoMessage() throws IOException {
-        final String message = NetworkUtils.listenForMessage(8095, 3000);
+    void testListenFor1secondWithNoMessage() throws IOException {
+        final String message = NetworkUtils.listenForMessage(8095, 1000);
         assertTrue(message.isEmpty());
     }
 }
