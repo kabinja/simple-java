@@ -7,7 +7,7 @@ public class ThreadUtils {
     private ThreadUtils() {}
 
     public static ByteArrayOutputStream toStreamUnsafe(String i1, String i2){
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        final ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
         final Runnable r1 = () -> {
             try {
@@ -28,8 +28,8 @@ public class ThreadUtils {
             }
         };
 
-        Thread t1 = new Thread(r1);
-        Thread t2 = new Thread(r2);
+        final Thread t1 = new Thread(r1);
+        final Thread t2 = new Thread(r2);
 
         t1.start();
         t2.start();

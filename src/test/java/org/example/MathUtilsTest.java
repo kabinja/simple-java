@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MathUtilsTest {
-
     @Test
     void testInflateWithPositiveNumber(){
         assertTrue(1. < MathUtils.inflate(1.));

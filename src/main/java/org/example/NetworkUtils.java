@@ -1,9 +1,6 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
@@ -17,7 +14,7 @@ public class NetworkUtils {
 
         try(ServerSocket serverSocket = new ServerSocket(port)) {
             serverSocket.setSoTimeout(milliseconds);
-            Socket socket = serverSocket.accept();
+            final Socket socket = serverSocket.accept();
             message = processMessage(socket.getInputStream());
         }
         catch (SocketTimeoutException e){
@@ -30,5 +27,18 @@ public class NetworkUtils {
     private static String processMessage(InputStream inputStream) {
         return new BufferedReader(new InputStreamReader(inputStream)).lines()
                 .parallel().collect(Collectors.joining("\n"));
+    }
+
+    public static void sendDelayedMessage(String message, int port, int delay){
+        new Thread(() ->{
+            try (Socket socket = new Socket("localhost", port)) {
+                Thread.sleep(delay);
+                final PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                out.println(message);
+            } catch (InterruptedException | IOException e) {
+                e.printStackTrace();
+                Thread.currentThread().interrupt();
+            }
+        }).start();
     }
 }
