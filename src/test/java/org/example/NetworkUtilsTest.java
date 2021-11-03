@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class NetworkUtilsTest {
+class NetworkUtilsTest {
     @Test
     void testListenForMessageFor3secondsWithNoMessage() throws IOException {
         final String message = NetworkUtils.listenForMessage(8095, 3000);

@@ -10,8 +10,10 @@ import java.net.SocketTimeoutException;
 import java.util.stream.Collectors;
 
 public class NetworkUtils {
+    private NetworkUtils() {}
+
     public static String listenForMessage(int port, int milliseconds) throws IOException {
-        String message = "";
+        String message;
 
         try(ServerSocket serverSocket = new ServerSocket(port)) {
             serverSocket.setSoTimeout(milliseconds);
@@ -25,7 +27,7 @@ public class NetworkUtils {
         return message;
     }
 
-    private static String processMessage(InputStream inputStream) throws IOException {
+    private static String processMessage(InputStream inputStream) {
         return new BufferedReader(new InputStreamReader(inputStream)).lines()
                 .parallel().collect(Collectors.joining("\n"));
     }

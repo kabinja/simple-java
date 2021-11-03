@@ -4,6 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class ThreadUtils {
+    private ThreadUtils() {}
+
     public static ByteArrayOutputStream toStreamUnsafe(String i1, String i2){
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
@@ -19,8 +21,10 @@ public class ThreadUtils {
             try {
                 Thread.sleep(100);
                 stream.write(i2.getBytes());
-            } catch (IOException | InterruptedException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
+            } catch (InterruptedException e){
+                Thread.currentThread().interrupt();
             }
         };
 
